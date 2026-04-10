@@ -30,7 +30,7 @@ test.describe('ContentPilot — Social Media Autoposter', () => {
   test('should show feature highlights on login page', async ({ page }) => {
     await page.goto('/login');
     await expect(page.locator('text=Calendar View')).toBeVisible();
-    await expect(page.locator('text=Auto-Publish')).toBeVisible();
+    await expect(page.getByText('Auto-Publish', { exact: true })).toBeVisible();
     await expect(page.locator('text=Analytics')).toBeVisible();
   });
 
